@@ -1,0 +1,152 @@
+.main {
+    grid-area: m;
+    width: 100%;
+    padding-left: 50px;
+}
+
+.main__title {
+    margin: 60px auto 0 auto;
+}
+
+.main__title > h2, .main__important > h2 {
+    text-align: center;
+    width: fit-content;
+    margin: 0 auto;
+    font-family: "Open Sans", sans-serif;
+    font-size: 35px;
+}
+
+.main__title > h3, .main__options > h3 {
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    font-size: 30px;
+    margin: 10px 0;
+}
+
+.main__info > h4, .main__important > h4 {
+    text-align: center;
+    font-size: 25px;
+    margin: 20px 0;
+}
+
+.main__info {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.main__info_block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    row-gap: 20px;
+    margin-top: 80px;
+}
+
+.main__info_block > div {
+    max-width: 250px;
+}
+
+.main__steps_bot {
+    padding-top: 30px;
+}
+
+.main__steps_bot > h4 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 25px;
+}
+
+.main__steps_bot > div {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 20px;
+    column-gap: 20px;
+}
+
+.login, .rules, .tell_us, .pay {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    border-radius: 20px;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.login > p, .rules > p, .tell_us > p, .pay > p {
+   margin: 0 0 30px 0;
+}
+
+.login {
+    background: #C5DDFF;
+    grid-column: 1;
+    grid-row: 1/3;
+    padding-top: 15%;
+}
+
+.login > button {
+    border: 2px solid #00093C;
+    border-radius: 10px;
+    color: #00093C;
+    background: transparent;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-around;
+    padding: 12px 62px;
+    cursor: pointer;
+    margin: 10% 0;
+}
+
+.login > button:hover {
+    background: #00093C;
+    color: #fff;
+}
+
+.login > button > p {
+    margin: 0;
+    padding-right: 9px;
+}
+
+.rules {
+    background: #B8EFCF;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.tell_us {
+    background: #FFEEF6;
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.pay {
+    background: #FFE38E;
+    grid-column: 2/-1;
+    grid-row: 2;
+}
+
+.main__steps_bot > h4 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+}
+
+.main__important {
+    margin-top: 50px;
+}
+
+.main__important > h2 {
+    padding: 20px;
+    text-transform: uppercase;
+}
+
+.main__important > h2 > span {
+    text-transform: uppercase;
+}
+
+.main__important > h4 {
+   max-width: 1000px;
+    margin: 0 auto;
+    padding-bottom: 30px;
+}

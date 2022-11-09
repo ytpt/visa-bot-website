@@ -1,0 +1,138 @@
+.about {
+    display: flex;
+    flex-direction: column;
+}
+
+.about__need {
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-start;
+    column-gap: 50px;
+    padding: 80px 0;
+}
+
+.about__need__text > h3 {
+    margin: 0;
+}
+
+.about__need__text > p, .about__deny p {
+    font-size: 18px;
+    line-height: 26px;
+    z-index: 100;
+}
+
+.about__need > img {
+    align-self: center;
+    max-width: 700px;
+    border-radius: 20px;
+    margin: 0;
+    display: block;
+    z-index: 100;
+}
+
+.cross {
+    position: absolute;
+    bottom: 25px;
+    right: -110px;
+}
+
+.triangle {
+    position: absolute;
+    top: 50px;
+    right: -80px;
+}
+
+.about__getVisa h4, .about__getVisa h5, .about__getVisa p {
+    margin: 0;
+}
+
+.about__getVisa h5 {
+    color: #4F4F4F;
+    font-size: 12px;
+    line-height: 15px;
+    padding-bottom: 10px;
+}
+
+.about__getVisa h4 {
+    color: #00093C;
+    font-size: 18px;
+    line-height: 22px;
+    padding-bottom: 15px;
+}
+
+.about__getVisa p, .about__getVisa li {
+    color: #4F4F4F;
+}
+
+.about__getVisa p, .about__getVisa li, .about__getVisa a {
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.getVisa__steps {
+    display: grid;
+    grid-template-columns: 1.5fr 1.5fr ;
+    grid-template-rows: 1fr 1fr 1fr;
+    row-gap: 20px;
+    column-gap: 20px;
+}
+
+.visaType, .visaForm, .userAccount, .interview, .visaCheck {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-height: 250px;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.visaType {
+    background: #C7EEFF;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.visaForm {
+    background: #FFE38E;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.userAccount {
+    background: #B8EFCF url("../../../img/man_with_laptop.png") no-repeat;
+    background-size: contain;
+    grid-column: 1/3;
+    grid-row: 2;
+    padding-left: 33%;
+}
+
+.userAccount > ul {
+    margin: 0;
+    padding-left: 15px;
+}
+
+.interview {
+    background: #C5DDFF;
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.visaCheck {
+    background: #FFEEF6;
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.about__deny {
+    padding: 80px 0;
+}
+
+.about__deny > img {
+    float: right;
+    margin: 20px;
+    border-radius: 20px;
+}
+
+

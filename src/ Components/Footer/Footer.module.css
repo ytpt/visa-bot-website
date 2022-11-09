@@ -1,0 +1,52 @@
+.footer {
+    width: 100%;
+    background: #00093C;
+}
+
+.footer > nav {
+    max-width: 1200px;
+    padding: 70px 0;
+    margin: 0 auto;
+    color: #fff;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 60px;
+    align-items: center;
+}
+
+.footer > nav > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.footer > nav > div > a {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    padding-bottom: 12px;
+}
+
+.footer__contacts__logo {
+    margin-bottom: 20px;
+}
+
+.footer__contacts__social {
+    max-width: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 38px;
+}
+
+.footer__contacts__social > a {
+   width: 25px;
+    height: 25px;
+}
+
+.footer__contacts__social > a > img:hover {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    transition: 0.2s;
+}

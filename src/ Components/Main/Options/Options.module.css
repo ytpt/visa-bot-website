@@ -1,0 +1,90 @@
+.main__options {
+    width: 100%;
+    height: auto;
+    background-image: url("../../../img/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    padding-bottom: 35px;
+}
+
+.main__options > div {
+    max-width: 1400px;
+    padding: 20px 0;
+}
+
+.main__options > div > h3 {
+   margin: 0;
+    padding: 20px 0 30px 75px;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 30px;
+    row-gap: 20px;
+}
+
+.cards__card {
+    background: #fff;
+    color: #000;
+    width: 250px;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.cards__card > h2 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 25px;
+    margin: 5px 0;
+    color: #00093C;
+}
+
+.card__img > img {
+    margin: 2px;
+    background-image: url("../../../img/ellipse.png");
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding: 15px;
+}
+
+.card__desc > p {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.card__desc > h3 > span {
+  text-transform: uppercase;
+}
+
+.card__desc > h3 {
+    font-size: 17px;
+    margin: 10px 0;
+}
+
+.cards__card > h4 {
+    font-size: 25px;
+    margin: 30px 0;
+}
+.cards__card > button {
+    font-size: 17px;
+    line-height: 17px;
+    color: #000;
+    background: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 15px 20px;
+}
+
+.cards__card > button:hover {
+    background: #fff linear-gradient(90deg, #F7941D 0%, #27AAE1 100%);
+    opacity: 0.8;
+    color: #00093C;
+}

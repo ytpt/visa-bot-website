@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'Open Sans';
+  src: url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap')
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.app {
+  width: 100%;
+}
+
+.app__wrapper {
+  width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-areas:
+    "n m m"
+    "n m m";
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: 136px 1fr 1fr;
+}
+
+.app__content {
+  grid-area: m;
+}
