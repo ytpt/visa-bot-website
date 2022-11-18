@@ -169,28 +169,34 @@ const LoginPage = () => {
                                                 <p className="error">
                                                     {errors.email && touched.email && errors.email}
                                                 </p>
-                                                <input
-                                                    type="password"
-                                                    name="password"
-                                                    onChange={handleChange}
-                                                    onBlur={handleBlur}
-                                                    value={values.password}
-                                                    placeholder="Пароль"
-                                                />
-                                                <p className="error">
-                                                    {errors.password && touched.password && errors.password}
-                                                </p>
-                                                <input
-                                                    type="password"
-                                                    name="confirmPassword"
-                                                    onChange={handleChange}
-                                                    onBlur={handleBlur}
-                                                    value={values.confirmPassword}
-                                                    placeholder="Повторите пароль"
-                                                />
-                                                <p className="error">
-                                                    {errors.confirmPassword && touched.confirmPassword && errors.confirmPassword}
-                                                </p>
+                                                <div className={style.passwords}>
+                                                    <div>
+                                                        <input
+                                                            type="password"
+                                                            name="password"
+                                                            onChange={handleChange}
+                                                            onBlur={handleBlur}
+                                                            value={values.password}
+                                                            placeholder="Пароль"
+                                                        />
+                                                        <p className="error">
+                                                            {errors.password && touched.password && errors.password}
+                                                        </p>
+                                                    </div>
+                                                    <div>
+                                                        <input
+                                                            type="password"
+                                                            name="confirmPassword"
+                                                            onChange={handleChange}
+                                                            onBlur={handleBlur}
+                                                            value={values.confirmPassword}
+                                                            placeholder="Повторите пароль"
+                                                        />
+                                                        <p className="error">
+                                                            {errors.confirmPassword && touched.confirmPassword && errors.confirmPassword}
+                                                        </p>
+                                                    </div>
+                                                </div>
                                                 <div className={style.form__enter}>
                                                     <button type={"submit"}>Регистрация</button>
                                                 </div>
