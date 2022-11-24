@@ -8,6 +8,7 @@ import instagram from "../img/instagram-icon.svg";
 import telegram from "../img/telegram-icon.svg";
 import youtube from "../img/youtube-icon.svg";
 import facebook from "../img/facebook-icon.svg";
+import {useNavigate} from "react-router-dom";
 
 const LoginPage = () => {
 
@@ -32,6 +33,11 @@ const LoginPage = () => {
 
     const changeEnterType = () => {
         setHasAccount(!hasAccount);
+    }
+
+    const navigate = useNavigate();
+    const handleClick = () => {
+        navigate('/account');
     }
 
     return (
@@ -123,7 +129,7 @@ const LoginPage = () => {
                                                         <a><img src={youtube} alt={'Ютуб'} width={27} height={26} /></a>
                                                         <a><img src={facebook} alt={'Фэйсбук'} width={27} height={26} /></a>
                                                     </div>
-                                                    <button type={"submit"}>Войти</button>
+                                                    <button type={"submit"} onClick={handleClick}>Войти</button>
                                                 </div>
                                             </div>
                                         : <div>
