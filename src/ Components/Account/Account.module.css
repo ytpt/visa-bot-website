@@ -1,0 +1,160 @@
+.acc__main {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.acc__main_block {
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.acc__main_block h2 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 25px;
+    margin: 5px 0 20px 0;
+    color: #00093C;
+}
+
+.acc__main_block > h1, .acc__tarif {
+    text-align: center;
+}
+
+.acc__cards {
+    min-height: 400px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    column-gap: 45px;
+    row-gap: 50px;
+    margin-bottom: 250px;
+}
+
+.acc__card {
+    max-width: 300px;
+}
+
+.acc__img > img {
+    margin: 2px;
+    background-image: url("../../img/ellipse.png");
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding: 15px;
+}
+
+.acc__card > a {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.acc__card > a:hover {
+    color: red;
+}
+
+.acc__desc {
+    display: none;
+}
+
+.acc__desc > p {
+    font-size: 15px;
+}
+
+.acc__desc > p > span {
+    font-size: 20px;
+    color: #00093C;
+}
+
+.acc__card > button {
+    font-size: 17px;
+    line-height: 17px;
+    color: #fff;
+    background: #00093C;;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 15px 20px;
+}
+
+.acc__card > button:hover {
+    background: #fff linear-gradient(90deg, #F7941D 0%, #27AAE1 100%);
+    opacity: 0.8;
+    color: #00093C;
+}
+
+.acc__feedback {
+    position: absolute;
+    background: #E5E5E5;
+    height: 220px;
+    left: 310px;
+    top: 650px;
+    border-radius: 20px;
+    box-shadow: 0 0 3px #FFFFFF;
+    padding: 25px;
+}
+
+.acc__feedback_write {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.acc__feedback_write_block {
+    max-width: 353px;
+    text-align: left;
+}
+
+.acc__feedback_write_block > h3 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.acc__feedback_write_block > p {
+    font-size: 16px;
+}
+
+.acc__feedback_write_form {
+    display: flex;
+    flex-direction: column;
+}
+
+.acc__feedback_write_form > textarea {
+    background: rgba(0, 9, 60, 0.1);
+    border-radius: 6px;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: none;
+    outline: none;
+}
+
+.acc__feedback_write_form > div {
+    display: flex;
+}
+
+.acc__feedback_write_form > div> p {
+    max-width: 210px;
+    font-size: 10px;
+    text-align: left;
+}
+
+.acc__feedback_write_form > div> button {
+    background: #F7941D;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 20px;
+    cursor: pointer;
+}
+
+.acc__feedback_write_form > div> button:hover {
+    background: #FFAE4D;
+}
+
+/*.acc__feedback_owl {*/
+/*    position: absolute;*/
+/*    bottom: -70;*/
+/*    left: 150;*/
+/*}*/
