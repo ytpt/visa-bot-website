@@ -12,7 +12,7 @@ const StepsBot = () => {
 
     return (
         <div className={style.main__steps_bot} id={'subscribe'}>
-            <h3>Как подключиться к боту?</h3>
+            <h3>Как подключиться?</h3>
             <div>
                 <div className={style.login}>
                     <h4>1. Будем знакомы</h4>

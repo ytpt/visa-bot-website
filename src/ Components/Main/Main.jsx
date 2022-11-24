@@ -5,6 +5,7 @@ import Info from "./Info/Info";
 import StepsBot from "./StepsBot/StepsBot";
 import Options from "./Options/Options";
 import About from "./About/About";
+import Contacts from "./Contacts/Contacts";
 
 const Main = () => {
     return (
@@ -18,6 +19,7 @@ const Main = () => {
             </div>
             <Options />
             <About />
+            <Contacts />
         </div>
     );
 }
