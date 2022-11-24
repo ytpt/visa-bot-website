@@ -28,6 +28,10 @@
     padding-bottom: 10px;
 }
 
+.footer > nav > div > a:hover {
+    text-decoration: underline;
+}
+
 .footer__contacts__home > a {
     display: flex;
     text-decoration: none;
