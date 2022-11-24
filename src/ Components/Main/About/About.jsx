@@ -13,29 +13,29 @@ const About = () => {
                 <div className={style.about__need__text}>
                     <img className={style.cross} src={cross} alt={'Крестик'} width={230} height={230} />
                     <img className={style.triangle} src={triangle} alt={'Линия'} width={165} height={137} />
-                    <h3>Кому нужна виза?</h3>
+                    <h3>Кому нужна виза</h3>
                     <p>Как правило, гражданин иностранного государства, который хочет въехать в США, должен сначала получить визу.</p>
                     <p>Некоторые туристы имеют право въезжать в США без визы, если они соответствуют требованиям программы безвизового въезда в США (VWP).</p>
                     <p>VWP позволяет путешественникам с действующим электронным паспортом въезжать в США без визы на срок до 90 дней.</p>
                     <p>Чтобы узнать обо всех подробностях программы VWP, посетите страницу:</p>
-                    <a href={'https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html'}>Ссылка</a>
+                    <a href={'https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html'} target="_blank">Ссылка</a>
                 </div>
             </div>
             <div className={style.about__getVisa} id={'5steps'}>
-                <h3>5 шагов к получению визы.</h3>
+                <h3>5 шагов к получению визы</h3>
                 <div className={style.getVisa__steps}>
                     <div className={style.visaType}>
                         <h5>Первый шаг</h5>
                         <h4>Определитесь с типом визы</h4>
                         <p>Решите, какой из типов виз подходит для Вашего путешествия в США. Подробная информация о типах виз может быть найдена здесь:</p>
-                        <a href={'https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/all-visa-categories.html'}>Ссылка</a>
+                        <a href={'https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/all-visa-categories.html'} target="_blank">Ссылка</a>
                     </div>
                     <div className={style.visaForm}>
                         <h5>Второй шаг</h5>
                         <h4>Заполните онлайн форму DS-160</h4>
                         <p>Форма DS-160 - это правительственная онлайн форма.</p>
                         <p>Каждый подающий должен заполнить форму до того, как будет подавать заявление на визу США.</p>
-                        <a href={'https://ceac.state.gov/CEAC'}>Ссылка на форму</a>
+                        <a href={'https://ceac.state.gov/CEAC'} target="_blank">Ссылка на форму</a>
                     </div>
                     <div className={style.userAccount}>
                         <h5>Третий шаг</h5>
@@ -61,16 +61,9 @@ const About = () => {
                     </div>
                 </div>
             </div>
-            {/*<div className={style.about__error}>*/}
-            {/*    <h3>Ошибка в визе.</h3>*/}
-            {/*    <p>Информация в визе должна совпадать с информацией в паспорте путешественника.*/}
-            {/*        Если вы обнаружили ошибку (в написании ФИО, ошибка в дате рождения, ошибка в дате окончания действия паспорта, итд.)*/}
-            {/*        в визе США, необходимо направить письмо на эл. почту <span>consyerevan@state.gov</span>*/}
-            {/*    </p>*/}
-            {/*</div>*/}
             <div className={style.about__deny} id={'deny'}>
                 <img src={deny} alt={'Ошибка в визе'} width={700} />
-                <h3>Отказ в визе.</h3>
+                <h3>Отказ в визе</h3>
                 <div>
                     <p>Если туристу было отказано в визе, то сотрудник консульства выдает письмо с указанием причины отказа.</p>
                     <p>Если письмо об отказе имеет отметку <strong>214(b)</strong> - это означает, что в настоящее время заявитель не имеет права на получение визы в соответствии с иммиграционными требованиями США.</p>
