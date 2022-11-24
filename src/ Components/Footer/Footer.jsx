@@ -31,21 +31,21 @@ const Footer = () => {
                 </div>
                 <div>
                     <h3>Про бот</h3>
-                    <a href={'#bot'}>Что такое бот?</a>
-                    <a href={'#subscribe'}>Как подключиться?</a>
-                    <a href={'#important'}>Важное</a>
+                    <a href={'/main'}>Что такое бот?</a>
+                    <a href={'/main'}>Как подключиться?</a>
+                    <a href={'/main'}>Важное</a>
                 </div>
                 <div>
                     <h3>Про тарифы</h3>
-                    <a href={'#options'}>Персональный</a>
-                    <a href={'#options'}>Парный</a>
-                    <a href={'#options'}>Семейный</a>
+                    <a href={'/main'}>Персональный</a>
+                    <a href={'/main'}>Парный</a>
+                    <a href={'/main'}>Семейный</a>
                 </div>
                 <div>
                     <h3>Про визу</h3>
-                    <a href={'#about'}>Кому нужна виза?</a>
-                    <a href={'#5steps'}>5 шагов к получению</a>
-                    <a href={'#deny'}>Отказ в визе</a>
+                    <a href={'/main'}>Кому нужна виза?</a>
+                    <a href={'/main'}>5 шагов к получению</a>
+                    <a href={'/main'}>Отказ в визе</a>
                 </div>
             </nav>
         </div>
