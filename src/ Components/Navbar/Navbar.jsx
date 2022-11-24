@@ -5,31 +5,41 @@ import homeIcon from '../../img/home-icon.svg';
 import letterIcon from '../../img/letter-icon.svg';
 import settingsIcon from '../../img/settings-icon.svg';
 import loginIcon from '../../img/user-icon.svg';
+import logoutIcon from '../../img/cross-white.svg';
 import { useNavigate } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({isLogin}) => {
+
     const navigate = useNavigate();
-    const handleClick = () => {
+    const redirectToLogin = () => {
         navigate('/login');
+    }
+
+    const redirectToMain = () => {
+        navigate('/main');
     }
 
     return (
         <div className={style.navbar}>
-            <nav>
-                <div className={style.navbar__icons}>
-                    <a href={'/main'}><img src={logo} alt={'Логотип'} width={50} height={50} /></a>
-                    {/*<div className={style.navbar__icons_block}>*/}
-                    {/*    <a><img src={homeIcon} alt={'Домой'} width={25} height={25} /></a>*/}
-                    {/*    <a><img src={letterIcon} alt={'Почта'} width={25} height={25} /></a>*/}
-                    {/*    <a><img src={settingsIcon} alt={'Настройки'} width={25} height={25} /></a>*/}
-                    {/*</div>*/}
-                </div>
-                <div className={style.navbar__login}>
-                    <a onClick={handleClick}>
-                        <img src={loginIcon} alt={'Вход в личный кабинет'} width={25} height={25} />
-                    </a>
-                    <p>Войти</p>
-                </div>
+            <nav className={style.navbar__icons}>
+                {isLogin
+                    ? <div>
+                        <div className={style.navbar__icons_block}>
+                            <a href={'/main'}><img src={homeIcon} alt={'Домой'} width={25} height={25} /></a>
+                            <a><img src={letterIcon} alt={'Почта'} width={25} height={25} /></a>
+                            <a><img src={settingsIcon} alt={'Настройки'} width={25} height={25} /></a>
+                            <a onClick={redirectToMain}>
+                                <img src={logoutIcon} alt={'Выход'} width={25} height={25} />
+                            </a>
+                        </div>
+                    </div>
+                    : <div className={style.navbar__login}>
+                        <a onClick={redirectToLogin}>
+                            <img src={loginIcon} alt={'Вход в личный кабинет'} width={25} height={25} />
+                        </a>
+                        <p>Войти</p>
+                    </div>
+                }
             </nav>
         </div>
     )
