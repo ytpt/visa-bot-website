@@ -28,13 +28,17 @@
     padding-bottom: 10px;
 }
 
-.footer > nav > div > a > h2 {
-    margin: 0;
-    padding-bottom: 5px;
+.footer__contacts__home > a {
+    display: flex;
+    text-decoration: none;
 }
 
-.footer__contacts__home {
-    margin-bottom: 20px;
+.footer__contacts__home > a > img {
+    margin-right: 15px;
+}
+
+.footer__contacts__home > a > h2 {
+   color: #fff;
 }
 
 .footer__contacts__social {

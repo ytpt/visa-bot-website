@@ -1,5 +1,6 @@
 import React from "react";
 import style from './Footer.module.css';
+import triangle_white from '../../img/triangle-white.svg';
 import vk from '../../img/vk-white.svg';
 import instagram from '../../img/instagram-white.svg';
 import facebook from '../../img/facebook-white.svg';
@@ -11,7 +12,12 @@ const Footer = () => {
         <div className={style.footer} id={'contacts'}>
             <nav>
                 <div>
-                    <a className={style.footer__contacts__home} href={'/main'}><h2>Домой</h2></a>
+                    <div className={style.footer__contacts__home}>
+                        <a href={'/main'}>
+                            <img src={triangle_white} alt={'Домой'}/>
+                            <h2>Домой</h2>
+                        </a>
+                    </div>
                     <a href={'tel:+78009503398'}>8 800 950-33-98</a>
                     <p>г.Томск, ул. Ленина, д.1</p>
                     <a href={'mailto:get_your_visa@gmail.com'}>get_your_visa@gmail.com</a>
