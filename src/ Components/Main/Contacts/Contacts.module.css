@@ -1,0 +1,44 @@
+.contacts {
+    margin-bottom: 80px;
+}
+
+.contacts h4, .contacts p {
+    margin: 0;
+}
+
+.contacts__content {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    padding-top: 40px;
+    column-gap: 100px;
+}
+
+.contacts__content__info > div {
+    padding-bottom: 40px;
+}
+
+.contacts__social {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 200px;
+    padding-top: 68.5px;
+}
+
+.contacts__social > a {
+    cursor: pointer;
+}
+
+.contacts__social > a {
+    width: 25px;
+    height: 25px;
+}
+
+.contacts__social > a > img:hover {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    transition: 0.2s;
+}
+
+
