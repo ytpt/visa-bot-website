@@ -1,11 +1,11 @@
 .navbar {
     grid-area: n;
     width: 132px;
-    height: 700px;
+    height: auto;
     background: #00093C;
     color: #fff;
     border-radius: 24px;
-    margin-top: 25px;
+    margin: 25px 0;
 }
 
 .navbar > nav {
