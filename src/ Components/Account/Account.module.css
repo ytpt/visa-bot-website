@@ -9,7 +9,9 @@
 
 .acc__main_block {
     min-width: 1000px;
+    text-align: center;
     margin: 0 auto;
+    padding: 10px;
 }
 
 .acc__main_block h2 {
