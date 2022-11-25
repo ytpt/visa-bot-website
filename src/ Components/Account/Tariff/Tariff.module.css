@@ -1,0 +1,41 @@
+.tariff {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 50px;
+    text-align: center;
+}
+
+.tariff > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tariff > div > h2, .tariff > div > h3 {
+    margin: 10px 0;
+}
+
+.tariff__alert > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.tariff__alert button {
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    margin-left: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.counter > p {
+    text-align: center;
+    font-style: italic;
+    margin-top: 100px;
+}
+
+.counter > p > span {
+    font-weight: 600;
+}
