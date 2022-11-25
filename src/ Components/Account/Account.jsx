@@ -6,7 +6,6 @@ import couple from "../../img/couple.svg";
 import single from "../../img/single.svg";
 import children from "../../img/children.svg";
 import owl from '../../img/owl.png';
-import cloud from '../../img/cloud.png';
 
 const Account = () => {
 
@@ -26,7 +25,7 @@ const Account = () => {
                 <Navbar isLogin={isLogin} />
                 <div className={style.acc__main_block}>
                     <h1>Привет, Анна!</h1>
-                    <h2>Выбери подходящий тариф:</h2>
+                    <h2>Чтоб подключиться к боту, сначала выберите подходящий тариф:</h2>
                     <div className={style.acc__tarif}>
                         {/*<h4>Ваш тариф:</h4>*/}
                         {/*<div>*/}
@@ -76,21 +75,20 @@ const Account = () => {
                             </div>
                         </div>
                         <div className={style.acc__feedback}>
-                            {/*<img src={owl} alt={'Сова'} className={style.acc__feedback_owl} />*/}
-                            {/*<img src={cloud} alt={'Облачко'} className={style.acc__feedback_cloud} />*/}
-                            <div className={style.acc__feedback_write}>
-                                <div className={style.acc__feedback_write_block}>
-                                    <h3>Есть вопросы?</h3>
+                            <img src={owl} alt={'Сова'} className={style.acc__feedback_owl} />
+                            <div className={style.acc__feedback_block}>
+                                <div className={style.acc__feedback_text}>
+                                    <h3>Остались вопросы?</h3>
                                     <p>Оставьте заявку и наши специалисты свяжутся с вами и ответят на все вопросы.</p>
                                 </div>
-                                <form className={style.acc__feedback_write_form}>
-                                    <textarea placeholder={'Задайте нам вопрос'} cols={30} rows={5} required />
-                                    <div>
-                                        <p>Нажимая на кнопку, я соглашаюсь на обработку персональных данных и с правилами пользования Платформой</p>
-                                        <button>Отправить</button>
-                                    </div>
-                                </form>
                             </div>
+                            <form className={style.acc__feedback_form}>
+                                <textarea placeholder={'Задайте нам вопрос'} cols={30} rows={5} required />
+                                <div>
+                                    <p>Нажимая на кнопку, я соглашаюсь на обработку персональных данных и с правилами пользования Платформой</p>
+                                    <button>Отправить</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
