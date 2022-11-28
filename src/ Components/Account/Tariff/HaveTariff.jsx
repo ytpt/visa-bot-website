@@ -1,8 +1,8 @@
 import React from "react";
 import style from "../../Account/Account.module.css";
-import styles from "./Tariff.module.css";
 import couple from "../../../img/couple.svg";
 import hand from "../../../img/hand.svg";
+import owl from "../../../img/owl.png";
 
 const HaveTariff = ({username, fathers, email, setEmail}) => {
 
@@ -50,27 +50,62 @@ const HaveTariff = ({username, fathers, email, setEmail}) => {
             }
         });
         document.addEventListener('keydown', function(e) {
-            if( e.keyCode === 13 ) {
+            if ( e.keyCode === 13 ) {
                 saveResult();
             }
         });
     }
 
+    const setInterval = ((function() {
+        let id = arguments[0];
+        if ( id === undefined ) {
+            console.log('Передайте id элемента в функцию');
+            return;
+        }
+        let elem = document.getElementById(id);
+        if ( !elem ) {
+            console.log('Элемент с id="'+id+'" не найден');
+            return;
+        }
+        if ( arguments.length !== 5 ) {
+            console.log('Передайте id, строку, день, месяц, год в функцию');
+            return;
+        }
+        let str = arguments[1], d = parseInt(arguments[2]), m = parseInt(arguments[3]), y = parseInt(arguments[4]);
+        if ( isNaN(y) || isNaN(m) || isNaN(d) || y < 1582 || y > 9999 || m < 1 || m > 12 || d < 1 || d > 31 ) {
+            console.log('Передайте корректную дату в функцию'); return;
+        }
+        let startDate = new Date(y,m-1, d);
+        let today = new Date();
+        let diffDays = Math.ceil(( today - startDate ) / ( 1000 * 60 * 60 * 24 ));
+        if ( diffDays < 1 ) {
+            console.log('Передайте дату раньше текущей в функцию');
+            return;
+        }
+        elem.innerText = str + ' ' + diffDays + ' ' + goodwordform(diffDays,'д','ень...','ня...','ней...');
+        function goodwordform(k,w,o1,o2,o5) {
+            if (( k % 100 > 10 && k % 100 < 20) || k % 10 > 4 || k % 10 == 0 ) w += o5;
+            else if ( k % 10 == 1 ) w += o1;
+            else w += o2;
+            return w;
+        }
+    })('counter','Бот ищет новые даты уже',8,7,2022),60000);
+
     return (
         <>
-            <div className={styles.tariff}>
-                <div className={styles.tariff__person}>
+            <div className={style.tariff}>
+                <div>
                     <h2>Главный заявитель:</h2>
                     <h3>{username}<br/>{fathers}</h3>
                 </div>
-                <div className={styles.tariff__chosen}>
+                <div>
                     <h2>Ваш тариф:</h2>
-                    <div className={style.acc__img}>
+                    <div className={style.tariff__card__img}>
                         <img src={couple} alt={'Пара'} width={75} height={75} />
                         <h3>Парный</h3>
                     </div>
                 </div>
-                <div className={styles.tariff__alert}>
+                <div className={style.tariff__alert}>
                     <h2>Способ уведомления:</h2>
                     <div id={'email'}>
                         <h3>{email}</h3>
@@ -78,8 +113,24 @@ const HaveTariff = ({username, fathers, email, setEmail}) => {
                     </div>
                 </div>
             </div>
-            <div className={styles.counter}>
-                <p>Бот ищет для Вас даты новые даты уже <span>28</span> дней...</p>
+            <div>
+                <span id={'counter'} />
+            </div>
+            <div className={style.tariff__writeUs}>
+                <img src={owl} alt={'Сова'} className={style.tariff__feedback_owl} />
+                <div className={style.tariff__feedback_block}>
+                    <div className={style.tariff__feedback_text}>
+                        <h3>Внести больше изменений</h3>
+                        <p>Опишите, что хотели бы поменять в своей заявке, и наши специалисты свяжутся с вами.</p>
+                    </div>
+                </div>
+                <form className={style.tariff__feedback_form}>
+                    <textarea placeholder={'Задайте нам вопрос'} cols={30} rows={5} required />
+                    <div>
+                        <p>Нажимая на кнопку, я соглашаюсь на обработку персональных данных и с правилами пользования Платформой</p>
+                        <button onClick={(e) => e.preventDefault()}>Отправить</button>
+                    </div>
+                </form>
             </div>
         </>
     )
