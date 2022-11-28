@@ -1,3 +1,4 @@
+/*HaveNotTariff*/
 .acc__main {
     position: relative;
     display: flex;
@@ -22,11 +23,11 @@
     color: #00093C;
 }
 
-.acc__main_block > h1, .acc__tarif {
+.acc__main_block > h1, .acc__tariff {
     text-align: center;
 }
 
-.acc__cards {
+.tariff__cards {
     min-height: 400px;
     display: flex;
     flex-direction: row;
@@ -37,11 +38,11 @@
     margin-bottom: 250px;
 }
 
-.acc__card {
+.tariff__card {
     max-width: 300px;
 }
 
-.acc__img > img {
+.tariff__card__img > img {
     margin: 2px;
     background-image: url("../../img/ellipse.png");
     background-size: contain;
@@ -50,29 +51,29 @@
     padding: 15px;
 }
 
-.acc__card > a {
+.tariff__card > a {
     text-decoration: underline;
     cursor: pointer;
 }
 
-.acc__card > a:hover {
+.tariff__card > a:hover {
     color: red;
 }
 
-.acc__desc {
+.tariff__desc {
     display: none;
 }
 
-.acc__desc > p {
+.tariff__desc > p {
     font-size: 15px;
 }
 
-.acc__desc > p > span {
+.tariff__desc > p > span {
     font-size: 20px;
     color: #00093C;
 }
 
-.acc__card > button {
+.tariff__card > button {
     font-size: 17px;
     line-height: 17px;
     color: #fff;
@@ -82,13 +83,13 @@
     padding: 15px 20px;
 }
 
-.acc__card > button:hover {
+.tariff__card > button:hover {
     background: #fff linear-gradient(90deg, #F7941D 0%, #27AAE1 100%);
     opacity: 0.8;
     color: #00093C;
 }
 
-.acc__feedback {
+.tariff__feedback, .tariff__writeUs {
     position: absolute;
     display: flex;
     flex-direction: row;
@@ -97,14 +98,17 @@
     min-width: 1000px;
     height: 220px;
     left: 200px;
-    top: 640px;
     text-align: right;
     border-radius: 20px;
     box-shadow: 0 0 3px #FFFFFF;
     padding: 25px;
 }
 
-.acc__feedback_block {
+.tariff__feedback {
+    top: 640px;
+}
+
+.tariff__feedback_block {
     position: relative;
     max-width: 350px;
     height: fit-content;
@@ -113,12 +117,12 @@
     margin-right: 50px;
 }
 
-.acc__feedback_block::after, .acc__feedback_block::before {
+.tariff__feedback_block::after, .tariff__feedback_block::before {
     content: '';
     position: absolute;
     background: #fff;
     left: -15px;
-    bottom: 92px;
+    bottom: 85px;
     width: 30px;
     height: 30px;
     box-shadow: 0 0 7px #000;
@@ -129,12 +133,12 @@
     -webkit-transform: rotate(45deg);
 }
 
-.acc__feedback_block::before {
+.tariff__feedback_block::before {
     z-index: 1;
     box-shadow: none;
 }
 
-.acc__feedback_text {
+.tariff__feedback_text {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -145,24 +149,24 @@
     border-radius: 20px;
 }
 
-.acc__feedback_text > h3 {
+.tariff__feedback_text > h3 {
     font-size: 24px;
     margin: 0;
 }
 
-.acc__feedback_text > p {
+.tariff__feedback_text > p {
     font-size: 16px;
     margin-top: 30px;
 }
 
-.acc__feedback_form {
+.tariff__feedback_form {
     display: flex;
     flex-direction: column;
     max-width: 300px;
     margin: 10px 20px;
 }
 
-.acc__feedback_form > textarea {
+.tariff__feedback_form > textarea {
     background: rgba(0, 9, 60, 0.1);
     border-radius: 6px;
     margin-bottom: 20px;
@@ -171,17 +175,17 @@
     outline: none;
 }
 
-.acc__feedback_form > div {
+.tariff__feedback_form > div {
     display: flex;
 }
 
-.acc__feedback_form > div> p {
+.tariff__feedback_form > div> p {
     max-width: 210px;
     font-size: 10px;
     text-align: left;
 }
 
-.acc__feedback_form > div> button {
+.tariff__feedback_form > div> button {
     background: #F7941D;
     color: #fff;
     border: none;
@@ -190,12 +194,56 @@
     cursor: pointer;
 }
 
-.acc__feedback_form > div> button:hover {
+.tariff__feedback_form > div> button:hover {
     background: #FFAE4D;
 }
 
-.acc__feedback_owl {
+.tariff__feedback_owl {
     position: absolute;
     bottom: -30px;
     left: -40px;
+}
+
+
+/*HaveTariff*/
+.tariff {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 50px;
+    text-align: center;
+}
+
+.tariff > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tariff > div > h2, .tariff > div > h3 {
+    margin: 10px 0;
+}
+
+.tariff__alert > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.tariff__alert a {
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    margin-left: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+div > span {
+    text-align: center;
+    font-style: italic;
+    margin-top: 100px;
+}
+
+.tariff__writeUs {
+    top: 420px;
 }
