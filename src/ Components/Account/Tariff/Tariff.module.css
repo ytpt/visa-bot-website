@@ -21,7 +21,7 @@
     align-items: center;
 }
 
-.tariff__alert button {
+.tariff__alert a {
     width: 20px;
     height: 20px;
     background: transparent;

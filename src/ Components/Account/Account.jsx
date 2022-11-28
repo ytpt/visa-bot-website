@@ -9,6 +9,9 @@ const Account = () => {
 
     const [isLogin, setLogin] = useState(true);
     const [haveBot, setHaveBot] = useState(true);
+    const [username, setUsername] = useState('Маликова Анна');
+    const [fathers, setFathers] = useState('Дмитриевна');
+    const [email, setEmail] = useState(localStorage.getItem('newEmail'));
 
     return (
         <div>
@@ -16,7 +19,13 @@ const Account = () => {
                 <Navbar isLogin={isLogin} />
                 <div className={style.acc__main_block}>
                     <h1>Привет, Анна!</h1>
-                    { haveBot ? <HaveTariff /> : <HaveNotTariff /> }
+                    { haveBot
+                        ? <HaveTariff
+                            username={username}
+                            fathers={fathers}
+                            email={email}
+                            setEmail={setEmail} />
+                        : <HaveNotTariff /> }
                 </div>
             </div>
             <Footer />
