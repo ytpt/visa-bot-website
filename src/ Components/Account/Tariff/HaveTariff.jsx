@@ -64,7 +64,6 @@ const HaveTariff = ({username, fathers, email, setEmail}) => {
         }
         let elem = document.getElementById(id);
         if ( !elem ) {
-            console.log('Элемент с id="'+id+'" не найден');
             return;
         }
         if ( arguments.length !== 5 ) {
