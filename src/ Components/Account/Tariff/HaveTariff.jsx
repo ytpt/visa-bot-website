@@ -4,7 +4,7 @@ import couple from "../../../img/couple.svg";
 import hand from "../../../img/hand.svg";
 import owl from "../../../img/owl.png";
 
-const HaveTariff = ({username, fathers, email, setEmail}) => {
+const HaveTariff = ({username, fathers, email, setEmail, send}) => {
 
     let errorMessage = document.createElement('p');
 
@@ -127,7 +127,7 @@ const HaveTariff = ({username, fathers, email, setEmail}) => {
                     <textarea placeholder={'Задайте нам вопрос'} cols={30} rows={5} required />
                     <div>
                         <p>Нажимая на кнопку, я соглашаюсь на обработку персональных данных и с правилами пользования Платформой</p>
-                        <button onClick={(e) => e.preventDefault()}>Отправить</button>
+                        <button onClick={send}>Отправить</button>
                     </div>
                 </form>
             </div>

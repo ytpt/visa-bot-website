@@ -5,7 +5,7 @@ import couple from "../../../img/couple.svg";
 import children from "../../../img/children.svg";
 import owl from "../../../img/owl.png";
 
-const HaveNotTariff = () => {
+const HaveNotTariff = ({send}) => {
 
     const showDesc = (e) => {
         const link = e.target;
@@ -67,10 +67,10 @@ const HaveNotTariff = () => {
                     </div>
                 </div>
                 <form className={style.tariff__feedback_form}>
-                    <textarea placeholder={'Задайте нам вопрос'} cols={30} rows={5} required />
+                    <textarea id={'textarea'} placeholder={'Задайте нам вопрос'} cols={30} rows={5} required />
                     <div>
                         <p>Нажимая на кнопку, я соглашаюсь на обработку персональных данных и с правилами пользования Платформой</p>
-                        <button onClick={(e) => e.preventDefault()}>Отправить</button>
+                        <button onClick={send}>Отправить</button>
                     </div>
                 </form>
             </div>

@@ -13,6 +13,15 @@ const Account = () => {
     const [fathers, setFathers] = useState('Дмитриевна');
     const [email, setEmail] = useState(localStorage.getItem('newEmail'));
 
+    const send = (e) => {
+        // e.preventDefault();
+        const form = e.target.parentNode.parentNode;
+        const textarea = form.querySelector('textarea');
+        textarea.addEventListener('change', () => {
+            console.log(textarea.value);
+        })
+    }
+
     return (
         <div>
             <div className={style.acc__main}>
@@ -24,8 +33,10 @@ const Account = () => {
                             username={username}
                             fathers={fathers}
                             email={email}
-                            setEmail={setEmail} />
-                        : <HaveNotTariff /> }
+                            setEmail={setEmail}
+                            send={send}
+                        />
+                        : <HaveNotTariff send={send} /> }
                 </div>
             </div>
             <Footer />
