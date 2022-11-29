@@ -36,7 +36,7 @@ const LoginPage = () => {
     }
 
     const navigate = useNavigate();
-    const handleClick = () => {
+    const enter = function() {
         navigate('/account');
     }
 
@@ -93,122 +93,127 @@ const LoginPage = () => {
                                               </>
                                     }
                                 </div>
-                                <form onSubmit={handleSubmit}>
                                     {
                                         (hasAccount)
-                                        ? <div>
-                                                <input
-                                                    type="email"
-                                                    name="email"
-                                                    onChange={handleChange}
-                                                    onBlur={handleBlur}
-                                                    value={values.email}
-                                                    placeholder="Эл. почта"
-                                                    id="email"
-                                                />
-                                                <p className="error">
-                                                    {errors.email && touched.email && errors.email}
-                                                </p>
-                                                <input
-                                                    type="password"
-                                                    name="password"
-                                                    onChange={handleChange}
-                                                    onBlur={handleBlur}
-                                                    value={values.password}
-                                                    placeholder="Пароль"
-                                                />
-                                                <p className="error">
-                                                    {errors.password && touched.password && errors.password}
-                                                </p>
-                                                <div className={style.form__enter}>
-                                                    <p>Войти с помощью соцсетей:</p>
-                                                    <div className={style.form__social}>
-                                                        <a><img src={vk} alt={'ВК'} width={27} height={26} /></a>
-                                                        <a><img src={instagram} alt={'Инстаграм'} width={27} height={26} /></a>
-                                                        <a><img src={telegram} alt={'Телеграм'} width={27} height={26} /></a>
-                                                        <a><img src={youtube} alt={'Ютуб'} width={27} height={26} /></a>
-                                                        <a><img src={facebook} alt={'Фэйсбук'} width={27} height={26} /></a>
-                                                    </div>
-                                                    <button type={"submit"} onClick={handleClick}>Войти</button>
-                                                </div>
-                                            </div>
-                                        : <div>
-                                                <div className={style.fullName}>
-                                                    <div>
-                                                        <input
-                                                            type="name"
-                                                            name="name"
-                                                            onChange={handleChange}
-                                                            onBlur={handleBlur}
-                                                            value={values.name}
-                                                            placeholder="Ваше имя"
-                                                            id="name"
-                                                        />
-                                                        <p className="error">
-                                                            {errors.name && touched.name && errors.name}
-                                                        </p>
-                                                    </div>
-                                                    <div>
-                                                        <input
-                                                            type="lastName"
-                                                            name="lastName"
-                                                            onChange={handleChange}
-                                                            onBlur={handleBlur}
-                                                            value={values.lastName}
-                                                            placeholder="Ваша фамилия"
-                                                            id="lastName"
-                                                        />
-                                                        <p className="error">
-                                                            {errors.lastName && touched.lastName && errors.lastName}
-                                                        </p>
+                                            ? <form id={'enterForm'} onSubmit={handleSubmit}>
+                                                <div>
+                                                    <input
+                                                        type="email"
+                                                        name="email"
+                                                        onChange={handleChange}
+                                                        onBlur={handleBlur}
+                                                        value={values.email}
+                                                        placeholder="Эл. почта"
+                                                        id="enterEmail"
+                                                    />
+                                                    <p className="error">
+                                                        {errors.email && touched.email && errors.email}
+                                                    </p>
+                                                    <input
+                                                        type="password"
+                                                        name="password"
+                                                        onChange={handleChange}
+                                                        onBlur={handleBlur}
+                                                        value={values.password}
+                                                        placeholder="Пароль"
+                                                        id="enterPassword"
+                                                    />
+                                                    <p className="error">
+                                                        {errors.password && touched.password && errors.password}
+                                                    </p>
+                                                    <div className={style.form__enter}>
+                                                        <p>Войти с помощью соцсетей:</p>
+                                                        <div className={style.form__social}>
+                                                            <a><img src={vk} alt={'ВК'} width={27} height={26} /></a>
+                                                            <a><img src={instagram} alt={'Инстаграм'} width={27} height={26} /></a>
+                                                            <a><img src={telegram} alt={'Телеграм'} width={27} height={26} /></a>
+                                                            <a><img src={youtube} alt={'Ютуб'} width={27} height={26} /></a>
+                                                            <a><img src={facebook} alt={'Фэйсбук'} width={27} height={26} /></a>
+                                                        </div>
+                                                        <button id={'enterBtn'} type={"submit"} onClick={enter}>Войти</button>
                                                     </div>
                                                 </div>
-                                                <input
-                                                    type="email"
-                                                    name="email"
-                                                    onChange={handleChange}
-                                                    onBlur={handleBlur}
-                                                    value={values.email}
-                                                    placeholder="Эл. почта"
-                                                    id="email"
-                                                />
-                                                <p className="error">
-                                                    {errors.email && touched.email && errors.email}
-                                                </p>
-                                                <div className={style.passwords}>
-                                                    <div>
-                                                        <input
-                                                            type="password"
-                                                            name="password"
-                                                            onChange={handleChange}
-                                                            onBlur={handleBlur}
-                                                            value={values.password}
-                                                            placeholder="Пароль"
-                                                        />
-                                                        <p className="error">
-                                                            {errors.password && touched.password && errors.password}
-                                                        </p>
+                                            </form>
+                                            : <form id={'registrForm'} onSubmit={handleSubmit}>
+                                                <div>
+                                                    <div className={style.fullName}>
+                                                        <div>
+                                                            <input
+                                                                type="name"
+                                                                name="name"
+                                                                onChange={handleChange}
+                                                                onBlur={handleBlur}
+                                                                value={values.name}
+                                                                placeholder="Ваше имя"
+                                                                id="name"
+                                                            />
+                                                            <p className="error">
+                                                                {errors.name && touched.name && errors.name}
+                                                            </p>
+                                                        </div>
+                                                        <div>
+                                                            <input
+                                                                type="lastName"
+                                                                name="lastName"
+                                                                onChange={handleChange}
+                                                                onBlur={handleBlur}
+                                                                value={values.lastName}
+                                                                placeholder="Ваша фамилия"
+                                                                id="lastName"
+                                                            />
+                                                            <p className="error">
+                                                                {errors.lastName && touched.lastName && errors.lastName}
+                                                            </p>
+                                                        </div>
                                                     </div>
-                                                    <div>
-                                                        <input
-                                                            type="password"
-                                                            name="confirmPassword"
-                                                            onChange={handleChange}
-                                                            onBlur={handleBlur}
-                                                            value={values.confirmPassword}
-                                                            placeholder="Повторите пароль"
-                                                        />
-                                                        <p className="error">
-                                                            {errors.confirmPassword && touched.confirmPassword && errors.confirmPassword}
-                                                        </p>
+                                                    <input
+                                                        type="email"
+                                                        name="email"
+                                                        onChange={handleChange}
+                                                        onBlur={handleBlur}
+                                                        value={values.email}
+                                                        placeholder="Эл. почта"
+                                                        id="registrEmail"
+                                                    />
+                                                    <p className="error">
+                                                        {errors.email && touched.email && errors.email}
+                                                    </p>
+                                                    <div className={style.passwords}>
+                                                        <div>
+                                                            <input
+                                                                type="password"
+                                                                name="password"
+                                                                onChange={handleChange}
+                                                                onBlur={handleBlur}
+                                                                value={values.password}
+                                                                placeholder="Пароль"
+                                                                id="registrPassword"
+                                                            />
+                                                            <p className="error">
+                                                                {errors.password && touched.password && errors.password}
+                                                            </p>
+                                                        </div>
+                                                        <div>
+                                                            <input
+                                                                type="password"
+                                                                name="confirmPassword"
+                                                                onChange={handleChange}
+                                                                onBlur={handleBlur}
+                                                                value={values.confirmPassword}
+                                                                placeholder="Повторите пароль"
+                                                                id="doublePassword"
+                                                            />
+                                                            <p className="error">
+                                                                {errors.confirmPassword && touched.confirmPassword && errors.confirmPassword}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div className={style.form__enter}>
+                                                        <button type={"submit"} onClick={enter}>Регистрация</button>
                                                     </div>
                                                 </div>
-                                                <div className={style.form__enter}>
-                                                    <button type={"submit"}>Регистрация</button>
-                                                </div>
-                                        </div>
+                                            </form>
                                     }
-                                </form>
                             </div>
                         </div>
                     )}
