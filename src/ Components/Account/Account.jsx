@@ -8,7 +8,7 @@ import HaveTariff from "./Tariff/HaveTariff";
 const Account = () => {
 
     const [isLogin, setLogin] = useState(true);
-    const [haveBot, setHaveBot] = useState(false);
+    const [haveBot, setHaveBot] = useState(true);
     const [username, setUsername] = useState('Маликова Анна');
     const [fathers, setFathers] = useState('Дмитриевна');
     const [email, setEmail] = useState(localStorage.getItem('newEmail'));
