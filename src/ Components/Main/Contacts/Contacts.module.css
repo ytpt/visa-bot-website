@@ -2,10 +2,6 @@
     margin-bottom: 50px;
 }
 
-.contacts > h3 {
-    padding-bottom: 15px;
-}
-
 .contacts h4, .contacts p {
     margin: 0;
 }
@@ -16,7 +12,11 @@
     column-gap: 100px;
 }
 
-.contacts__content__info > div {
+.contacts__content__info > h3 {
+    margin: 0;
+}
+
+.contacts__content__info > div, .contacts__content__info > h3 {
     padding-bottom: 40px;
 }
 

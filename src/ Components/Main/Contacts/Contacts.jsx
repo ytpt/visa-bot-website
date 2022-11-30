@@ -13,9 +13,9 @@ import Map from "../Map/Map";
 const Contacts = () => {
     return (
         <div className={style.contacts}>
-            <h3>Контакты</h3>
             <div className={style.contacts__content}>
                 <div className={style.contacts__content__info}>
+                    <h3>Контакты</h3>
                     <div className={style.contacts__phone}>
                         <img src={phone} alt={'Телефон'} width={27} height={27} />
                         <h4>8 800 950-33-98</h4>
