@@ -8,18 +8,22 @@ import HaveTariff from "./Tariff/HaveTariff";
 const Account = () => {
 
     const [isLogin, setLogin] = useState(true);
-    const [haveBot, setHaveBot] = useState(true);
+    const [haveBot, setHaveBot] = useState(false);
     const [username, setUsername] = useState('Маликова Анна');
     const [fathers, setFathers] = useState('Дмитриевна');
     const [email, setEmail] = useState(localStorage.getItem('newEmail'));
 
     const send = (e) => {
-        // e.preventDefault();
+        e.preventDefault();
         const form = e.target.parentNode.parentNode;
         const textarea = form.querySelector('textarea');
-        textarea.addEventListener('change', () => {
-            console.log(textarea.value);
-        })
+        console.log(textarea.value);
+
+        let success = document.createElement('h4');
+        success.style.minWidth = '300px';
+        success.style.margin = '10px 20px';
+        success.innerHTML = 'Ваше сообщение отправлено!';
+        form.replaceWith(success);
     }
 
     return (
