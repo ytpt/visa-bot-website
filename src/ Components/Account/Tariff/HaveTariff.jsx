@@ -19,6 +19,7 @@ const HaveTariff = ({username, fathers, email, setEmail, send}) => {
         titleEmail.style.display = 'none';
         link.style.display = 'none';
         tariffAlert.append(input);
+        input.focus();
 
         input.oninput = function() {
             if ( input.value !== '' && input.value !== email ) {
@@ -112,7 +113,7 @@ const HaveTariff = ({username, fathers, email, setEmail, send}) => {
                     </div>
                 </div>
             </div>
-            <div>
+            <div className={style.tariff__counter}>
                 <span id={'counter'} />
             </div>
             <div className={style.tariff__writeUs}>
