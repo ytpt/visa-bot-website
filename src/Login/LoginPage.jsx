@@ -9,10 +9,21 @@ import telegram from "../img/telegram-icon.svg";
 import youtube from "../img/youtube-icon.svg";
 import facebook from "../img/facebook-icon.svg";
 import {useNavigate} from "react-router-dom";
+import Account from "../ Components/Account/Account";
 
 const LoginPage = () => {
 
-    const schema = Yup.object().shape({
+    const loginSchema = Yup.object().shape({
+        email: Yup.string()
+            .required("Это обязательное поле.")
+            .email("Неверный формат почты."),
+        password: Yup.string()
+            .required("Это обязательное поле.")
+            .matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})", "Слишком легкий пароль.")
+            .min(8, "Пароль должен содержать больше 8 символов."),
+    });
+
+    const registerSchema = Yup.object().shape({
         email: Yup.string()
             .required("Это обязательное поле.")
             .email("Неверный формат почты."),
@@ -30,14 +41,11 @@ const LoginPage = () => {
     });
 
     const [hasAccount, setHasAccount] = useState(true);
+    const [haveBot, setHaveBot] = useState(false);
+    const navigate = useNavigate();
 
     const changeEnterType = () => {
         setHasAccount(!hasAccount);
-    }
-
-    const navigate = useNavigate();
-    const enter = function() {
-        navigate('/account');
     }
 
     return (
@@ -46,56 +54,59 @@ const LoginPage = () => {
                 <h2>Войдите в систему или зарегистрируйтесь, если у вас ещё нет аккаунта.</h2>
             </div>
             <div className={style.login__content}>
-                <Formik
-                    validationSchema={schema}
-                    initialValues={{
-                        email: "",
-                        password: "",
-                        name: "",
-                        lastName: "",
-                        confirmPassword: ""
-                    }}
-                    validateOnBlur
-                    onSubmit={(values) => {
-                        console.log(values)}}
-                >
-                    {({
-                          values,
-                          errors,
-                          touched,
-                          handleChange,
-                          handleBlur,
-                          handleSubmit
-                      }) => (
-                        <div className={style.form}>
-                            <div className={style.form__wrapper}>
-                                <div className={style.form__buttons}>
-                                    {
-                                        (hasAccount)
-                                            ? <>
-                                                <button
-                                                    className={style.btn_active}
-                                                    onClick={changeEnterType}
-                                                    type="button">
-                                                    Вход
-                                                </button>
-                                                <button onClick={changeEnterType} type="button">Регистрация</button>
-                                              </>
+                <div className={style.form}>
+                    <div className={style.form__wrapper}>
+                        <div className={style.form__buttons}>
+                            {
+                                (hasAccount)
+                                    ? <>
+                                        <button
+                                            className={style.btn_active}
+                                            onClick={changeEnterType}
+                                            type="button">
+                                            Вход
+                                        </button>
+                                        <button onClick={changeEnterType} type="button">Регистрация</button>
+                                      </>
 
-                                            : <>
-                                                <button onClick={changeEnterType} type="button">Вход</button>
-                                                <button
-                                                    className={style.btn_active}
-                                                    onClick={changeEnterType}
-                                                    type="button">
-                                                    Регистрация
-                                                </button>
-                                              </>
-                                    }
-                                </div>
-                                    {
-                                        (hasAccount)
-                                            ? <form id={'enterForm'} onSubmit={handleSubmit}>
+                                    : <>
+                                        <button onClick={changeEnterType} type="button">Вход</button>
+                                        <button
+                                            className={style.btn_active}
+                                            onClick={changeEnterType}
+                                            type="button">
+                                            Регистрация
+                                        </button>
+                                      </>
+                            }
+                        </div>
+                            {
+                                (hasAccount)
+                                    ? <Formik
+                                        validationSchema={loginSchema}
+                                        initialValues={{
+                                            email: "",
+                                            password: ""
+                                        }}
+                                        validateOnBlur
+                                        onSubmit={(values) => {
+                                            console.log(values);
+                                            // return navigate('/account');
+                                            return <Account
+                                                haveBot={haveBot}
+                                                setHaveBot={setHaveBot}
+                                            />
+                                        }}
+                                    >
+                                        {({
+                                              values,
+                                              errors,
+                                              touched,
+                                              handleChange,
+                                              handleBlur,
+                                              handleSubmit
+                                        }) => (
+                                            <form id={'enterForm'} onSubmit={handleSubmit}>
                                                 <div>
                                                     <input
                                                         type="email"
@@ -130,11 +141,40 @@ const LoginPage = () => {
                                                             <a><img src={youtube} alt={'Ютуб'} width={27} height={26} /></a>
                                                             <a><img src={facebook} alt={'Фэйсбук'} width={27} height={26} /></a>
                                                         </div>
-                                                        <button id={'enterBtn'} type={"submit"} onClick={enter}>Войти</button>
+                                                        <button id={'enterBtn'} type={"submit"}>Войти</button>
                                                     </div>
                                                 </div>
                                             </form>
-                                            : <form id={'registrForm'} onSubmit={handleSubmit}>
+                                        )}
+                                    </Formik>
+                                    : <Formik
+                                        validationSchema={registerSchema}
+                                        initialValues={{
+                                            email: "",
+                                            password: "",
+                                            name: "",
+                                            lastName: "",
+                                            confirmPassword: ""
+                                        }}
+                                        validateOnBlur
+                                        onSubmit={(values) => {
+                                            console.log(values);
+                                            // return navigate('/account');
+                                            return navigate(`<Account
+                                                haveBot={false}
+                                                setHaveBot={setHaveBot}
+                                            />`);
+                                        }}
+                                    >
+                                        {({
+                                              values,
+                                              errors,
+                                              touched,
+                                              handleChange,
+                                              handleBlur,
+                                              handleSubmit
+                                          }) => (
+                                            <form id={'registerForm'} onSubmit={handleSubmit}>
                                                 <div>
                                                     <div className={style.fullName}>
                                                         <div>
@@ -173,7 +213,7 @@ const LoginPage = () => {
                                                         onBlur={handleBlur}
                                                         value={values.email}
                                                         placeholder="Эл. почта"
-                                                        id="registrEmail"
+                                                        id="registerEmail"
                                                     />
                                                     <p className="error">
                                                         {errors.email && touched.email && errors.email}
@@ -187,7 +227,7 @@ const LoginPage = () => {
                                                                 onBlur={handleBlur}
                                                                 value={values.password}
                                                                 placeholder="Пароль"
-                                                                id="registrPassword"
+                                                                id="registerPassword"
                                                             />
                                                             <p className="error">
                                                                 {errors.password && touched.password && errors.password}
@@ -209,15 +249,15 @@ const LoginPage = () => {
                                                         </div>
                                                     </div>
                                                     <div className={style.form__enter}>
-                                                        <button type={"submit"} onClick={enter}>Регистрация</button>
+                                                        <button type={"submit"}>Регистрация</button>
                                                     </div>
                                                 </div>
                                             </form>
-                                    }
-                            </div>
-                        </div>
-                    )}
-                </Formik>
+                                        )}
+                                    </Formik>
+                            }
+                    </div>
+                </div>
             </div>
             <Footer />
         </div>
