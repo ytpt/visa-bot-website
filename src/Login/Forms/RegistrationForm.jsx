@@ -16,11 +16,7 @@ export const RegistrationForm = ({ registerSchema, navigate }) => {
             validateOnBlur
             onSubmit={(values) => {
                 console.log(values);
-                // return navigate('/account');
-                return navigate(`<Account
-                    haveBot={false}
-                    setHaveBot={setHaveBot}
-                />`);
+                return navigate('/account');
             }}
         >
             {({

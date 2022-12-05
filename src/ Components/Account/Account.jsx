@@ -5,10 +5,10 @@ import Navbar from "../Navbar/Navbar";
 import HaveNotTariff from "./Tariff/HaveNotTariff";
 import HaveTariff from "./Tariff/HaveTariff";
 
-const Account = ({haveBot, setHaveBot}) => {
+const Account = () => {
 
     const [isLogin, setLogin] = useState(true);
-    // const [haveBot, setHaveBot] = useState(true);
+    const [haveBot, setHaveBot] = useState(true);
     const [username, setUsername] = useState('Маликова Анна');
     const [fathers, setFathers] = useState('Дмитриевна');
     const [email, setEmail] = useState(localStorage.getItem('newEmail'));

@@ -40,7 +40,7 @@ const LoginPage = () => {
     const navigate = useNavigate();
 
     const changeEnterType = () => {
-        setHasAccount(!hasAccount);
+       setHasAccount(!hasAccount);
     }
 
     return (
@@ -58,14 +58,13 @@ const LoginPage = () => {
                                         <button
                                             className={style.btn_active}
                                             onClick={changeEnterType}
-                                            type="button"> Вход
+                                            type="button">Вход
                                         </button>
                                         <button
                                             onClick={changeEnterType}
                                             type="button">Регистрация
                                         </button>
                                       </>
-
                                     : <>
                                         <button
                                             onClick={changeEnterType}
@@ -74,7 +73,7 @@ const LoginPage = () => {
                                         <button
                                             className={style.btn_active}
                                             onClick={changeEnterType}
-                                            type="button"> Регистрация
+                                            type="button">Регистрация
                                         </button>
                                       </>
                             }
@@ -85,6 +84,7 @@ const LoginPage = () => {
                                         loginSchema={loginSchema}
                                         haveBot={haveBot}
                                         setHaveBot={setHaveBot}
+                                        navigate={navigate}
                                     />
                                     : <RegistrationForm
                                         registerSchema={registerSchema}

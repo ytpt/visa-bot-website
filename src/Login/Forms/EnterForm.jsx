@@ -8,7 +8,7 @@ import youtube from "../../img/youtube-icon.svg";
 import facebook from "../../img/facebook-icon.svg";
 import {Formik} from "formik";
 
-const EnterForm = ({ loginSchema, haveBot, setHaveBot }) => {
+const EnterForm = ({ loginSchema, haveBot, setHaveBot, navigate }) => {
     return (
         <Formik
             validationSchema={loginSchema}
@@ -19,11 +19,11 @@ const EnterForm = ({ loginSchema, haveBot, setHaveBot }) => {
             validateOnBlur
             onSubmit={(values) => {
                 console.log(values);
-                // return navigate('/account');
-                return <Account
-                    haveBot={haveBot}
-                    setHaveBot={setHaveBot}
-                />
+                return navigate('/account');
+                // return <Account
+                //     haveBot={haveBot}
+                //     setHaveBot={setHaveBot}
+                // />
             }}
         >
             {({
